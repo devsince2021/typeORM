@@ -1,5 +1,6 @@
 require("dotenv").config();
 import { createConnection } from "typeorm";
+import { Client } from "./entities/Client";
 
 const main = async () => {
   try {
@@ -10,6 +11,8 @@ const main = async () => {
       username: process.env.USERNAME,
       password: undefined,
       database: process.env.DATABASE,
+      entities: [Client],
+      synchronize: true,
     });
 
     console.log("connected!");
