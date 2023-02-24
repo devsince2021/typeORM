@@ -1,18 +1,11 @@
-import {
-  Entity,
-  BaseEntity,
-  Column,
-  PrimaryColumn,
-  CreateDateColumn,
-  UpdateDateColumn,
-} from "typeorm";
+import { Entity, BaseEntity, Column, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity("person")
 export class Person extends BaseEntity {
-  // @PrimaryColumn({ type: "uuid" })
+  // @PrimaryGeneratedColumn({ type: "uuid" })
   // id: string;
 
-  @PrimaryColumn()
+  @PrimaryGeneratedColumn()
   id: number;
 
   @Column()
