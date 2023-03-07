@@ -28,7 +28,9 @@ export class Transaction extends BaseEntity {
   amount: number;
 
   // only many side has a foreign key
-  @ManyToOne(() => Client, (client) => client.transactions)
+  @ManyToOne(() => Client, (client) => client.transactions, {
+    onDelete: "CASCADE",
+  })
   @JoinColumn({
     name: "client_id",
   })

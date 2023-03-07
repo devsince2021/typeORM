@@ -8,6 +8,7 @@ import { createClientRouter } from "./routes/create_client";
 import { createBankerRouter } from "./routes/create_banker";
 import { createTransactionRouter } from "./routes/create_transaction";
 import { connectBankerToClientRouter } from "./routes/connect_banker_client";
+import { deleteClientRouter } from "./routes/delete_client";
 
 const app = express();
 
@@ -30,6 +31,7 @@ const main = async () => {
     app.use(createBankerRouter);
     app.use(createTransactionRouter);
     app.use(connectBankerToClientRouter);
+    app.use(deleteClientRouter);
 
     app.listen(8080, () => {
       console.log("running on 8080");

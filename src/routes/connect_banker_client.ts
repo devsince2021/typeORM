@@ -11,9 +11,6 @@ router.put("/api/banker/:bankerId/client/:clientId", async (req, res) => {
   const banker = await Banker.findOne({ where: { id: parseInt(bankerId) } });
   const client = await Client.findOne({ where: { id: parseInt(clientId) } });
 
-  console.log("1", banker);
-  console.log("2", client);
-
   if (!banker || !client) {
     return res.json({ msg: "one of them is empty" });
   }
